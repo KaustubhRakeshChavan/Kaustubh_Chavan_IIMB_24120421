@@ -17,48 +17,56 @@ body, html {
   display: block;
 }
 
+
 .hotspot {
   position: absolute;
   cursor: pointer;
   z-index: 10;
-  background-color: transparent; /* Invisible */
-  border: none; /* No border */
-  color: transparent; /* No text visible */
+  background-color: transparent;
+  border: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Hotspot placement (adjust as needed) */
+
+.hotspot:hover {
+  transform: scale(1.05);
+  background-color: rgba(253, 208, 23, 0.25); 
+  box-shadow: 0 0 10px 4px rgba(253, 208, 23, 0.4);
+}
+
+
 .profile {
-  top: 48%;
-  left: 0%;
-  width: 35%;
+  top: 47.5%;
+  left: 3%;
+  width: 27%;
   height: 5%;
 }
 
 .education {
-  top: 55%;
-  left: 0%;
-  width: 30%;
+  top: 54%;
+  left: 3%;
+  width: 19%;
   height: 5%;
 }
 
 .achievements {
-  top: 63%;
-  left: 0%;
-  width: 38%;
+  top: 61.4%;
+  left: 3%;
+  width: 24%;
   height: 5%;
 }
 
 .skills {
-  top: 69%;
-  left: 0%;
-  width: 20%;
+  top: 68.7%;
+  left: 3%;
+  width: 13.7%;
   height: 5%;
 }
 
 .cv {
-  top: 75%;
-  left: 0%;
-  width: 30%;
+  top: 75.8%;
+  left: 3%;
+  width: 19%;
   height: 5%;
 }
 
@@ -75,4 +83,47 @@ body, html {
     font-size: 0.8rem;
     height: 7%;
   }
+}
+
+
+
+a:not(.hotspot),
+a.btn:not(.hotspot),
+.btn:not(.hotspot),
+button:not(.hotspot),
+input[type="button"]:not(.hotspot),
+input[type="submit"]:not(.hotspot),
+[role="button"]:not(.hotspot) {
+  
+  display: inline-block;
+  transition: color 200ms ease, transform 200ms ease;
+  transform-origin: center center;
+  will-change: transform, color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+a:not(.hotspot):hover,
+a.btn:not(.hotspot):hover,
+.btn:not(.hotspot):hover,
+button:not(.hotspot):hover,
+input[type="button"]:not(.hotspot):hover,
+input[type="submit"]:not(.hotspot):hover,
+[role="button"]:not(.hotspot):hover {
+  color: #FDD017 !important;
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+a:not(.hotspot):focus,
+a.btn:not(.hotspot):focus,
+.btn:not(.hotspot):focus,
+button:not(.hotspot):focus,
+input[type="button"]:not(.hotspot):focus,
+input[type="submit"]:not(.hotspot):focus,
+[role="button"]:not(.hotspot):focus {
+  color: #FDD017 !important;
+  transform: scale(1.05);
+  outline: none;
 }
